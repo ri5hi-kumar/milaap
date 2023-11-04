@@ -5,6 +5,7 @@ const cors = require("cors");
 const cookieParser = require("cookie-parser");
 
 const {registerUser} = require('./controllers/userController')
+const {addPet} = require('./controllers/petController')
 
 const app = express();
 dotenv.config();
@@ -39,6 +40,7 @@ app.use((err, req, res, next) => {
     });
 });
 
+// addPet();
 registerUser();
 
 app.listen(8800, () => {
