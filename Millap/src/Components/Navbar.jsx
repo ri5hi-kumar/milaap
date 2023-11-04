@@ -1,5 +1,5 @@
 import React from "react";
-
+import { NavLink } from "react-router-dom";
 function Navbar() {
   return (
     <>
@@ -9,13 +9,26 @@ function Navbar() {
             <h1 className="font-serif text-2xl hover:cursor-pointer">Millap</h1>
           </div>
           <ul className="center-part flex items-center justify-center  font-semibold hover:cursor-pointer ">
-            <li className="m-8 hover:opacity-30">Home</li>
-            <li className="m-8 hover:opacity-30">About</li>
-            <li className="m-8 hover:opacity-30">Dogs for adoption</li>
-            <li className="m-8 hover:opacity-30">Donate</li>
-            <li className="m-8 hover:opacity-30">Volunteer</li>
-            <li className="m-8 hover:opacity-30">Adopted Dogs</li>
-            <li className="m-8 hover:opacity-30">Contact</li>
+            <NavLink to="/" className="m-8 hover:opacity-30">
+              Home
+            </NavLink>
+            <NavLink to="/about" className="m-8 hover:opacity-30">
+              About
+            </NavLink>
+            <NavLink to="/adoptiondogs" className="m-8 hover:opacity-30">
+              Dogs for adoption
+            </NavLink>
+
+            {/* <NavLink  className="m-8 hover:opacity-30">Donate</NavLink > */}
+            <NavLink to="/lostandfound" className="m-8 hover:opacity-30">
+              Lost and Found
+            </NavLink>
+           
+              Adopted Dogs
+            
+            <NavLink to="/contact" className="m-8 hover:opacity-30">
+              Contact
+            </NavLink>
           </ul>
         </div>
       </div>
