@@ -11,20 +11,21 @@ exports.registerUser = asyncHandler(async (req, res) => {
     }
 
     const user1 = {
-        name: "DK",
-        email: "dk@gmail.com",
-        phone: 12133234,
-        address: "Punjab",
-        occupation: "Singer",
-        availability: true,
+        // name: "DK",
+        // email: "dk@gmail.com",
+        // phone: 12133234,
+        // address: "Punjab",
+        // occupation: "Singer",
+        // availability: true,
+        // pet: petExists._id,
+
+        name: req.body.name,
+        email: req.body.email,
+        phone: req.body.phone,
+        address: req.body.address,
+        occupation: req.body.occupation,
+        availability: req.body.availability,
         pet: petExists._id,
-        
-        // name: req.body.name,
-        // email: req.body.email,
-        // phone: req.body.phone,
-        // address: req.body.address,
-        // occupation: req.body.occupation,
-        // availability: req.body.availability,
     };
 
     if (!user1.name || !user1.email || !user1.phone || !user1.address || !user1.availability || !user1.occupation) {

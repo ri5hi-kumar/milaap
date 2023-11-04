@@ -4,8 +4,8 @@ const mongoose = require("mongoose");
 const cors = require("cors");
 const cookieParser = require("cookie-parser");
 
-const {registerUser} = require('./controllers/userController')
-const {addPet} = require('./controllers/petController')
+// const {registerUser} = require('./controllers/userController')
+// const {addPet} = require('./controllers/petController')
 
 const app = express();
 dotenv.config();
@@ -29,6 +29,13 @@ app.use(cors())
 app.use(cookieParser())
 app.use(express.json());
 
+app.get('/', (req, res) => {
+    res.send('This is home');
+})
+
+app.use('/api/application', require('./routes/userRoutes'));
+app.use('/api/pets', require('./routes/petRoutes'));
+
 app.use((err, req, res, next) => {
     const errorStatus = err.status || 500;
     const errorMessage = err.message || "Something went wrong!";
@@ -41,7 +48,7 @@ app.use((err, req, res, next) => {
 });
 
 // addPet();
-registerUser();
+// registerUser();
 
 app.listen(8800, () => {
     connect();

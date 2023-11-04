@@ -46,3 +46,8 @@ exports.addPet = asyncHandler(async (req, res) => {
         console.log("Error creating a applicant\n", e);
     }
 });
+
+exports.getPets = asyncHandler(async (req, res) => {
+    const goals = await Pet.find();
+    res.status(200).json(goals);
+});
