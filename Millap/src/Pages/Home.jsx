@@ -1,6 +1,7 @@
 import React from "react";
 import Slider from "../Components/Slider";
 import img2 from "../assets/Images/side.jpg";
+import img3 from "../assets/Images/volunteer.avif";
 function Home() {
   return (
     <>
@@ -40,8 +41,15 @@ function Home() {
         </div>
       </div>
 
-      <div className="home3 w-full h-screen text-center px-auto py-auto">
-        <button>Book Your Dog Now</button>
+      <div className="volunteer h-screen">
+        <div className="image w-6/12 h-screen border-2 border-black p-10">
+          <img className="w-full shadow-black" src={img3} alt="Loading" />
+        </div>
+        <div className="details">
+          <div className="heading">
+            <h1>Apply for Volunteering</h1>
+          </div>
+        </div>
       </div>
     </>
   );
