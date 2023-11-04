@@ -9,10 +9,12 @@ const petSchema = new mongoose.Schema({
         type: Boolean,
         required: true,
     },
-    applicants: {
-        type: Array,
-        required: true
-    },
+    applicants:[
+        {
+                type: mongoose.Schema.Types.ObjectId,
+                ref:'User'
+        }
+    ],
     age: {
         type: String,
         required: true

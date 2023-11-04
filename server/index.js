@@ -4,9 +4,12 @@ const mongoose = require("mongoose");
 const cors = require("cors");
 const cookieParser = require("cookie-parser");
 
+const {registerUser} = require('./controllers/userController')
+
 const app = express();
 dotenv.config();
 
+mongoose.set("strictQuery", false);
 const connect = async () => {
     try {
         await mongoose.connect(process.env.MONGO);
@@ -35,6 +38,8 @@ app.use((err, req, res, next) => {
         stack: err.stack,
     });
 });
+
+registerUser();
 
 app.listen(8800, () => {
     connect();
