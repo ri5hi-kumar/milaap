@@ -4,15 +4,15 @@ const asyncHandler = require("express-async-handler");
 
 exports.addPet = asyncHandler(async (req, res) => {
     const pet1 = {
-        name: "Ronni",
-        adopted: false,
+        name: req.body.name,
+        adopted: req.body.adopted,
         applicants: [],
-        age: 10,
-        type: "Dog",
-        gender: "male",
+        age: req.body.age,
+        type: req.body.type,
+        gender: req.body.gender,
         pictures: [],
-        vaccinated: true,
-        description: "Nice Dog",
+        vaccinated: req.body.vaccinated,
+        description: req.body.description,
     };
 
     if (!pet1.name || !pet1.age || !pet1.type) {
@@ -42,6 +42,7 @@ exports.addPet = asyncHandler(async (req, res) => {
 
     try {
         await test.save();
+        res.status(200).json(test);
     } catch (e) {
         console.log("Error creating a applicant\n", e);
     }

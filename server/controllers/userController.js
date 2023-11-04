@@ -3,7 +3,8 @@ const Pet = require('../models/pet');
 const asyncHandler = require("express-async-handler");
 
 exports.registerUser = asyncHandler(async (req, res) => {
-    const pet_name = "Ronni";
+    // const pet_name = "Ronni";
+    const pet_name = req.body.pet_name;
     const petExists = await Pet.findOne({ name: pet_name });
     if (!petExists) {
         res.status(400);
@@ -56,7 +57,7 @@ exports.registerUser = asyncHandler(async (req, res) => {
         await test.save();
         petExists.applicants.push(test._id);
         await petExists.save();
-
+        res.status(200).json(test);
     } catch (e) {
         console.log("Error creating a applicant\n", e);
     }
