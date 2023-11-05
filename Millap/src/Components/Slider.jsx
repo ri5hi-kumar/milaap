@@ -2,10 +2,12 @@ import React from "react";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 
-import img1 from "../assets/Images/dog4.webp";
-import img2 from "../assets/Images/dog5.jpeg";
+import img1 from "../assets/Images/side.jpg";
+//import img2 from "../assets/Images/dog2.jpg";
 import img3 from "../assets/Images/third.jpg";
-import img4 from "../assets/Images/dog2.jpg";
+import img4 from "../assets/Images/dog4.webp";
+import img5 from "../assets/Images/cat.jpeg";
+import img6 from "../assets/Images/cat2.jpeg";
 
 function Slider() {
   const sliderHeight = `calc(100vh - 16px)`;
@@ -34,7 +36,7 @@ function Slider() {
           <img src={img1} alt="Loading.." style={imageStyles} />
         </div>
         <div>
-          <img src={img2} alt="Loading.." style={imageStyles} />
+          <img src={img6} alt="Loading.." style={imageStyles} />
         </div>
         <div>
           <img src={img3} alt="Loading.." style={imageStyles} />

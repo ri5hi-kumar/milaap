@@ -7,9 +7,9 @@ function Home() {
     <>
       <Slider />
       <div className="home2 w-full h-screen p-10 flex items-center justify-center bg-black">
-        <div className="image w-full h-full p-16">
+        <div className="image w-full h-[500px] p-16">
           <img
-            className="h-full rounded-lg shadow-black"
+            className="h-[200px] rounded-lg shadow-black"
             src={img2}
             alt="Loading"
           />
@@ -41,16 +41,7 @@ function Home() {
         </div>
       </div>
 
-      <div className="volunteer h-screen">
-        <div className="image w-6/12 h-screen border-2 border-black p-10">
-          <img className="w-full shadow-black" src={img3} alt="Loading" />
-        </div>
-        <div className="details">
-          <div className="heading">
-            <h1>Apply for Volunteering</h1>
-          </div>
-        </div>
-      </div>
+     
     </>
   );
 }

@@ -8,7 +8,7 @@ import About from "../Pages/About";
 import { Routes, Route } from "react-router-dom";
 function Router() {
   return (
-    <>
+    <div className="bg-gray-300 h-fit  mt-0">
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
@@ -17,7 +17,8 @@ function Router() {
         <Route path="/adoptiondogs/application" element={<Appli />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>
-    </>
+    </div>
+   
   );
 }
 
